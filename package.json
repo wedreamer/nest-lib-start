@@ -1,7 +1,7 @@
 {
   "name": "@shubuzuo/nest-sms",
   "version": "0.0.1",
-  "description": "对项目中 第三方短息服务 进行包装",
+  "description": "对项目中 第三方短信 (aws) 服务 进行包装",
   "author": "1409458062@qq.com",
   "private": false,
   "main": "./lib/main.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wedreamer/nest-sms.git"
+    "url": "https://github.com/wedreamer/pri-nest-sms.git"
   },
   "scripts": {
     "prebuild": "rimraf dist",

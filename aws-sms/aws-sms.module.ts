@@ -1,7 +1,8 @@
 import { AwsSmsService } from './aws-sms.service';
-import { Module, DynamicModule } from '@nestjs/common';
+import { Module, DynamicModule, Global } from '@nestjs/common';
 import { SNSOption, awsSmsProvider, OPTIONS } from './aws-provider';
 
+@Global()
 @Module({
     imports: [],
     controllers: [],
@@ -11,7 +12,6 @@ import { SNSOption, awsSmsProvider, OPTIONS } from './aws-provider';
 })
 export class AwsSmsModule { 
     public static forRoot(options: SNSOption): DynamicModule {
-
         return {
             module: AwsSmsModule,
             providers: [
