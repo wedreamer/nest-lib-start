@@ -1,8 +1,8 @@
 {
-  "name": "your pagename",
-  "version": "0.0.0",
-  "description": "...",
-  "author": "name <email>",
+  "name": "@shubuzuo/nest-sms",
+  "version": "0.0.1",
+  "description": "对项目中 第三方短息服务 进行包装",
+  "author": "1409458062@qq.com",
   "private": false,
   "main": "./lib/main.js",
   "license": "MIT",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "your repository url"
+    "url": "https://github.com/wedreamer/nest-sms.git"
   },
   "scripts": {
     "prebuild": "rimraf dist",
@@ -32,6 +32,10 @@
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/google-libphonenumber": "^7.4.19",
+    "aws-sdk": "^2.719.0",
+    "google-libphonenumber": "^3.2.10",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4"
