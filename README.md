@@ -51,7 +51,7 @@ export class AppModule {}
 controller.ts
 ```javascript
 import { Controller, Get } from '@nestjs/common';
-import { AwsSmsService } from '@shubuzuo/nestjs-sms';
+import { AwsSmsService, PublishResponse } from '@shubuzuo/nestjs-sms';
 
 @Controller()
 export class AppController {
@@ -60,10 +60,9 @@ export class AppController {
   ) {}
 
   @Get('sms')
-  async setSms(): Promise<any> {
-    await this.awsSmsService.send('17630802711', '????')
+  async setSms(): Promise<PublishResponse> {
+    return  await this.awsSmsService.send('17630802711', '????')
   }
 }
-
 
 ```

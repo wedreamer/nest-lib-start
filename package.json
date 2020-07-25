@@ -1,6 +1,6 @@
 {
   "name": "@shubuzuo/nestjs-sms",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "对项目中 第三方短信 (aws) 服务 进行包装",
   "author": "1409458062@qq.com",
   "private": false,
