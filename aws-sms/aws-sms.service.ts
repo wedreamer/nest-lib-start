@@ -1,7 +1,7 @@
 import { Injectable, Inject } from "@nestjs/common";
 import { SNS } from 'aws-sdk';
 import { PhoneNumberFormat, PhoneNumberUtil } from "google-libphonenumber";
-import { AWSSMS } from "./aws-provider";
+import { AWSSMS } from "./aws-sms-provider";
 
 const PNF = PhoneNumberFormat;
 const phoneUtil = PhoneNumberUtil.getInstance();

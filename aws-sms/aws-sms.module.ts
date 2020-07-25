@@ -1,6 +1,6 @@
 import { AwsSmsService } from './aws-sms.service';
 import { Module, DynamicModule, Global } from '@nestjs/common';
-import { SNSOption, awsSmsProvider, OPTIONS } from './aws-provider';
+import { SNSOption, awsSmsProvider, OPTIONS } from './aws-sms-provider';
 
 @Global()
 @Module({
