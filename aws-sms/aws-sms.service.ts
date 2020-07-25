@@ -6,7 +6,7 @@ import { AWSSMS } from "./aws-sms-provider";
 const PNF = PhoneNumberFormat;
 const phoneUtil = PhoneNumberUtil.getInstance();
 
-const config = global['Config'];
+export type PublishResponse = SNS.Types.PublishResponse
 
 @Injectable()
 export class AwsSmsService {
@@ -18,7 +18,7 @@ export class AwsSmsService {
    * @param phoneNumber 手机号码
    * @param message 消息内容
    */
-  async send(phoneNumber: string, message: string): Promise<SNS.Types.PublishResponse> {
+  async send(phoneNumber: string, message: string): Promise<PublishResponse> {
     const normalizedPhoneNumber = phoneNumber.startsWith('1') || phoneNumber.startsWith('+861')
       ? phoneUtil.format(phoneUtil.parseAndKeepRawInput(phoneNumber, 'CN'), PNF.E164)
       : phoneUtil.format(phoneUtil.parseAndKeepRawInput(phoneNumber, 'TW'), PNF.E164)

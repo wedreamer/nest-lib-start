@@ -29,56 +29,41 @@ export const config = {
 
 module.ts
 ```javascript
-import { AppController } from './test.controller';
-import { EmailModule } from '@shubuzuo/nestjs-email';
-
-const config = {
-                apiKey: '-------------------',
-                apiSecret: '-----------------------'
-              }
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AwsSmsModule } from '@shubuzuo/nestjs-sms'
 
 @Module({
-	imports: [ 
-		EmailModule.forRoot(config)
-	],
-	controllers: [AppController],
+  imports: [
+    AwsSmsModule.forRoot({
+      accessKeyId: '------',
+      secretAccessKey: '------',
+      apiVersion: '------',
+      region: '-----',
+    })
+  ],
+  controllers: [AppController],
+  providers: [],
 })
-
-export class AppModule{}
+export class AppModule {}
 
 ```
 controller.ts
 ```javascript
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
-import { EmailService } from '@shubuzuo/nestjs-email';
+import { AwsSmsService } from '@shubuzuo/nestjs-sms';
 
 @Controller()
 export class AppController {
   constructor(
-    private readonly emailService: EmailService
+    private readonly awsSmsService: AwsSmsService
   ) {}
 
-  @Get('email')
-  async setEmali(): Promise<any> {
-
-    await this.emailService.send(
-      // ?? ??? ?????? ?
-      {
-        Email: '??key ??? ??',
-        Name: '?????'
-      },
-      {
-        emailAddress: '????',
-        name: '????'
-      },
-      {
-        subject: '?????',
-        text: '??',
-        html: `????`
-      }
-    )
+  @Get('sms')
+  async setSms(): Promise<any> {
+    await this.awsSmsService.send('17630802711', '????')
   }
 }
+
 
 ```
